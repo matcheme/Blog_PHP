@@ -70,10 +70,10 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Portfolio</a>
+                        <a href="#portfolio">Qui sommes nous?</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">About</a>
+                        <a href="#about">Blog</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#contact">Contact</a>
