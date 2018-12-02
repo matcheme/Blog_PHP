@@ -1,5 +1,6 @@
 
 <?php 
+include("pages/head.php");
 include("pages/header.php");
 
   include("pages/body.php"); 

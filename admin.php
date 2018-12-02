@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="refresh" content="0;url=pages/admin.php">
-<title>SB Admin 2</title>
+<title>Votre Blog</title>
 <script language="javascript">
     window.location.href = "pages/admin.php"
 </script>
