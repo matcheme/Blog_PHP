@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Votre Blog</title>
+    <title>Développement Personnel</title>
 
       <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -60,7 +60,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.php">Votre Blog Prof</a>
+                <a class="navbar-brand" href="index.php">Développement personnel</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -73,7 +73,7 @@
                         <a href="#portfolio">Qui sommes nous?</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">Blog</a>
+                        <a href="#about">Tous Nos Blogs</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#contact">Contact</a>
