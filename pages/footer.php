@@ -30,7 +30,15 @@
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>A propos de nous</h3>
-                        <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                        <p>Loren ipson a free to use, open source eme created by 
+                         </p>
+                         <div class=" col-lg-8 col-lg-offset-2 text-center">
+                             <a href="#" class="btn btn-lg btn-outline ">
+                                 <i class="fa fa-download"></i>Télécharger le CV
+                              </a>
+
+                          </div>
+
                     </div>
                 </div>
             </div>
