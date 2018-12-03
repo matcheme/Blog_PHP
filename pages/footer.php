@@ -1,5 +1,5 @@
 <!-- Footer -->
-    <footer class="text-center">
+    <footer class="text-center" class="panel-footer">
         <div class="footer-above">
             <div class="container">
                 <div class="row">
@@ -39,7 +39,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright &copy; devélopement personnel 2018
+                        Copyright &copy; devéloppement personnel 2018
                     </div>
                 </div>
             </div>
