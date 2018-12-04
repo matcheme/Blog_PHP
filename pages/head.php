@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Développement Personnel</title>
+    <title>Dév Personnel</title>
 
       <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -63,7 +63,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.php">Développement personnel</a>
+                <a class="navbar-brand" href="index.php">Dév personnel</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -72,17 +72,20 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="page-scroll">
+                     <li class="page-scroll">
                         <a href="#portfolio">Qui sommes nous?</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">Tous Nos Blogs</a>
+                        <a href="#about">Blogs</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#contact">Contact</a>
                     </li>
                     <li>
-                        <a href="login.php">Login</a>
+                        <a href="#"> S'inscrire </a>
+                    </li>
+                    <li>
+                        <a href="login.php">Connexion</a>
                     </li>
                     <li>
                         <a href="admin.php">Admin</a>
