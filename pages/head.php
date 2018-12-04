@@ -22,6 +22,9 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
+       <!--For modern browsers put by eliematcheme@gmail.com-->
+    <link rel="icon" type="image/svg" href="img/baseline-comment-24px.svg" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -83,6 +86,8 @@
                     </li>
                     <li>
                         <a href="admin.php">Admin</a>
+
+                        <!--For modern browsers-->         
                     </li>
                 </ul>
             </div>
