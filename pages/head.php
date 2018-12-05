@@ -63,7 +63,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.php">Dév personnel</a>
+                <a class="navbar-brand" href="index.php">Développement personnel</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -86,11 +86,6 @@
                     </li>
                     <li>
                         <a href="login.php">Connexion</a>
-                    </li>
-                    <li>
-                        <a href="admin.php">Admin</a>
-
-                        <!--For modern browsers-->         
                     </li>
                 </ul>
             </div>

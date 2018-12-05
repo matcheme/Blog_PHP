@@ -5,26 +5,26 @@
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h3>Localisation</h3>
-                        <p>3481 Melrose Place
-                            <br>Beverly Hills, CA 90210</p>
+                        <p>501 Carrefour Warda
+                            <br>Yaoundé Cameroun</p>
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Nous suivre sur</h3>
                         <ul class="list-inline">
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                             <li>
+                                <a href="https://github.com/matcheme" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                                <a href="https://www.facebook.com/elie.matcheme" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://plus.google.com/u/0/?tab=mX" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
                             </li>
                             <li>
                                 <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
+                                <a href="https://www.linkedin.com/in/match%C3%A9m%C3%A9-elie-984b6052/" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -48,10 +48,12 @@
                 <div class="row">
                     <div class="col-lg-12">
                         Copyright &copy; devéloppement personnel 2018
+                          <strong><a href="admin.php">Admin</a></strong>
+                                    
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
     </footer>
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
