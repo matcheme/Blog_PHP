@@ -11,6 +11,14 @@
 
     <title>Dév Personnel</title>
 
+
+    <!-- Font Icon Elie -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css Elie -->
+    <!--  <link rel="stylesheet" href="css/style.css">  -->
+
+
       <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -82,10 +90,10 @@
                         <a href="#contact">Contact</a>
                     </li>
                     <li>
-                        <a href="#"> S'inscrire </a>
+                        <a href="Inscription/sign_up.php"> S'inscrire </a>
                     </li>
                     <li>
-                        <a href="login.php">Connexion</a>
+                        <a href="Login/sign_in.php">Connexion</a>
                     </li>
                 </ul>
             </div>
