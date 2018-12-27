@@ -23,7 +23,7 @@ if ($submit) {
     $agree_term = isset($_POST["agree-term"]);
 
     //conditions pour voir si les champs du formulaire ne sont pas vide!
-    if (!empty($name) AND !empty($email) AND !empty($_POST["password"]) AND !empty($_POST["re_password"]) AND !empty($agree_term)) {
+    if (!empty($name) AND !empty($email) AND !empty($_POST["password"]) AND !empty($_POST["re_password"])) {
 
         $nameLength = strlen($_POST["name"]);
         if ($nameLength < 30) {
@@ -44,14 +44,23 @@ if ($submit) {
                     if ($mailrexiste == 0) {
                     
                         if ($password == $re_password ) {
+
                             // Contrôle de champs de password par l'expression régulière!
                             $regexpassword = "#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,}$#";
                             $mdp = $_POST["password"];
                             if ( preg_match($regexpassword, $mdp) ) {
-                                // requette d'inscription d'utilisateur
-                                $requser =  $bdd->prepare("INSERT INTO membres(nom, mail,motdepasse, dateM)  VALUES(?,?,?, now()) ");
-                                $requser->execute(array($name,$email,$password));
-                                header("Location: http://localhost/Blog/Blog_php/index.php");
+
+                                // Scripte pour accepter les conditions d'utilisation de la case à cocher!
+                                if ($agree_term) {
+                                    // requette d'inscription d'utilisateur
+                                    $requser =  $bdd->prepare("INSERT INTO membres(nom, mail,motdepasse, dateM)  VALUES(?,?,?, now()) ");
+                                    $requser->execute(array($name,$email,$password));
+                                    header("Location: http://localhost/Blog/Blog_php/index.php");
+                                 } 
+                                 else
+                                 {
+                                    $erreur = "Veuillez cliquer dans la case à cocher pour accepter les conditions d'utilisation de ce site web!";
+                                 }  
                             }
                             else
                             {
