@@ -15,7 +15,16 @@ if ($submit) {
 
         $nameLength = strlen($_POST["name"]);
         if ($nameLength < 30) {
-            echo "ok";
+
+            //Vérification de la validation du mail utilisateur
+            if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                echo "ok";
+            }
+            else
+            {
+                $erreur = "Votre Email n'est pas valide !";
+            }
+            
         }
         else
         {
