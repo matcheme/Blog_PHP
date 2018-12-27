@@ -18,7 +18,23 @@ if ($submit) {
 
             //Vérification de la validation du mail utilisateur
             if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                echo "ok";
+                
+                if ($password == $re_password ) {
+                    // Contrôle de champs de password par l'expression régulière!
+                    $regexpassword = "#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,}$#";
+                    $mdp = $_POST["password"];
+                    if ( preg_match($regexpassword, $mdp) ) {
+                        echo "ok";
+                    }
+                    else
+                    {
+                        $erreur = "Le mot de passe doit avoir au moins 1 Majuscul, 1 minuscul, un caractères spéciale(#,/,*, ..) et un chiffre!";
+                    }
+                }
+                else
+                {
+                    $erreur = "Les mots de passes ne correspondent pas!";
+                }    
             }
             else
             {
