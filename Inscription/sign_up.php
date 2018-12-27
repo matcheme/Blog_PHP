@@ -1,3 +1,27 @@
+
+<?php 
+$submit = isset($_POST["submit"]);
+if ($submit) {
+
+    //déclaration des variables de controle des diférents champs du formulaire.
+    $name = htmlspecialchars($_POST["name"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $password = sha1($_POST["password"]);
+    $re_password = sha1($_POST["re_password"]);
+    $agree_term = isset($_POST["agree-term"]);
+
+    //conditions pour voir si les champs du formulaire ne sont pas vide!
+    if (!empty($name) AND !empty($email) AND !empty($password) AND !empty($re_password)) {
+        echo "ok";
+    }
+    else
+    {
+        $erreur = "Tous les champs doivent être remplis!";
+    }
+}
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +46,13 @@
                 <div class="signup-content">
                     <form method="POST" id="signup-form" class="signup-form">
                         <h2 class="form-title">Créer un compte</h2>
+                        <div style="color: red">
+                           <?php if (isset($erreur)) {
+                                    echo $erreur;
+                                 } ?> 
+                                 <br>
+                        </div>
+                        
                         <div class="form-group">
                             <input type="text" class="form-input" name="name" id="name" placeholder="Votre Nom"/>
                         </div>
@@ -46,6 +77,8 @@
                     <p class="loginhere">
                         Avez vous un Compte ? <a href="../Login/sign_in.php" class="loginhere-link">Se Connecter ici</a>
                     </p>
+                    
+
                 </div>
             </div>
         </section>
