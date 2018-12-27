@@ -28,32 +28,54 @@ if ($submit) {
         $nameLength = strlen($_POST["name"]);
         if ($nameLength < 30) {
 
-            //Vérification de la validation du mail utilisateur
-            if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                
-                if ($password == $re_password ) {
-                    // Contrôle de champs de password par l'expression régulière!
-                    $regexpassword = "#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,}$#";
-                    $mdp = $_POST["password"];
-                    if ( preg_match($regexpassword, $mdp) ) {
-                        // requette d'inscription d'utilisateur
-                        $requser =  $bdd->prepare("INSERT INTO membres(nom, mail,motdepasse, dateM)  VALUES(?,?,?, now()) ");
-                        $requser->execute(array($name,$email,$password));
-                        header("Location: http://localhost/Blog/Blog_php/index.php");
+            //Vérification si nom utilisateur existe déjà pour eviter le doublon!
+            $reqnom = $bdd->prepare("SELECT * FROM membres WHERE nom =?");
+            $reqnom->execute(array( $name));
+            $nomrexiste = $reqnom->rowCount();
+            if ($nomrexiste == 0) {
+            
+                //Vérification de la validation du mail utilisateur
+                if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+                    //Vérification si Email existe.
+                    $reqmail = $bdd->prepare("SELECT * FROM membres WHERE mail =?");
+                    $reqmail->execute(array($email));
+                    $mailrexiste = $reqmail->rowCount();
+                    if ($mailrexiste == 0) {
+                    
+                        if ($password == $re_password ) {
+                            // Contrôle de champs de password par l'expression régulière!
+                            $regexpassword = "#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,}$#";
+                            $mdp = $_POST["password"];
+                            if ( preg_match($regexpassword, $mdp) ) {
+                                // requette d'inscription d'utilisateur
+                                $requser =  $bdd->prepare("INSERT INTO membres(nom, mail,motdepasse, dateM)  VALUES(?,?,?, now()) ");
+                                $requser->execute(array($name,$email,$password));
+                                header("Location: http://localhost/Blog/Blog_php/index.php");
+                            }
+                            else
+                            {
+                                $erreur = "Le mot de passe doit avoir au moins 1 Majuscul, 1 minuscul, un caractères spéciale(#,/,*, ..) et un chiffre!";
+                            }
+                        }
+                        else
+                        {
+                            $erreur = "Les mots de passes ne correspondent pas!";
+                        }
                     }
                     else
                     {
-                        $erreur = "Le mot de passe doit avoir au moins 1 Majuscul, 1 minuscul, un caractères spéciale(#,/,*, ..) et un chiffre!";
-                    }
+                        $erreur = "Ce Email est déja utilisé!";
+                    }    
                 }
                 else
                 {
-                    $erreur = "Les mots de passes ne correspondent pas!";
-                }    
+                    $erreur = "Votre Email n'est pas valide !";
+                }
             }
             else
             {
-                $erreur = "Votre Email n'est pas valide !";
+                $erreur = "Ce Nom est déjà utilisé !";
             }
             
         }
