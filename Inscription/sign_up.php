@@ -11,8 +11,16 @@ if ($submit) {
     $agree_term = isset($_POST["agree-term"]);
 
     //conditions pour voir si les champs du formulaire ne sont pas vide!
-    if (!empty($name) AND !empty($email) AND !empty($password) AND !empty($re_password)) {
-        echo "ok";
+    if (!empty($name) AND !empty($email) AND !empty($_POST["password"]) AND !empty($_POST["re_password"]) AND !empty($agree_term)) {
+
+        $nameLength = strlen($_POST["name"]);
+        if ($nameLength < 30) {
+            echo "ok";
+        }
+        else
+        {
+           $erreur = "Votre nom ne doit pas depasser 30 caractères!"; 
+        }
     }
     else
     {
@@ -54,10 +62,10 @@ if ($submit) {
                         </div>
                         
                         <div class="form-group">
-                            <input type="text" class="form-input" name="name" id="name" placeholder="Votre Nom"/>
+                            <input type="text" class="form-input" name="name" id="name" placeholder="Votre Nom" value="<?php if(isset($name)){ echo $name;} ?>" />
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-input" name="email" id="email" placeholder="Votre Email"/>
+                            <input type="email" class="form-input" name="email" id="email" placeholder="Votre Email" value="<?php if(isset($email)){ echo $email;} ?>" />
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-input" name="password" id="password" placeholder="Votre Mot de passe"/>
