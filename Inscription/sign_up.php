@@ -1,5 +1,17 @@
 
 <?php 
+
+try{
+        $bdd =new PDO('mysql:host=localhost;dbname=Blog; charset=utf8', 'matcheme', 'Divinement#1983');
+        // Activation des erreurs PDO
+         $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        // mode de fetch par défaut : FETCH_ASSOC / FETCH_OBJ / FETCH_BOTH
+         $bdd->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    } 
+    catch(PDOException $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+
 $submit = isset($_POST["submit"]);
 if ($submit) {
 
@@ -24,7 +36,10 @@ if ($submit) {
                     $regexpassword = "#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{6,}$#";
                     $mdp = $_POST["password"];
                     if ( preg_match($regexpassword, $mdp) ) {
-                        echo "ok";
+                        // requette d'inscription d'utilisateur
+                        $requser =  $bdd->prepare("INSERT INTO membres(nom, mail,motdepasse, dateM)  VALUES(?,?,?, now()) ");
+                        $requser->execute(array($name,$email,$password));
+                        header("Location: http://localhost/Blog/Blog_php/index.php");
                     }
                     else
                     {
