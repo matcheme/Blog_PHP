@@ -46,7 +46,7 @@
 					</div>
 
 					<div class="text-right p-t-13 p-b-23">
-						<a href="http://localhost/Blog/Vues/index.php" class="txt2">
+						<a href="http://localhost/Blog/Blog_php/index.php" class="txt2">
 							Nom d'Utilisateur / Mot de Passe?
 						</a>
 						<span class="txt1">

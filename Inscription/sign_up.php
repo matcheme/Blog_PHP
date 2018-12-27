@@ -138,7 +138,7 @@ if ($submit) {
                         </div>
                         <div class="form-group">
                             <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                            <label for="agree-term" class="label-agree-term"><span><span></span></span>J'accepte tous les termes d'utilisation  <a href="http://localhost/Blog/Vues/index.php" class="term-service">Les Termes d'utilisation</a></label>
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>J'accepte tous les termes d'utilisation  <a href="http://localhost/Blog/Blog_php/index.php" class="term-service">Les Termes d'utilisation</a></label>
                         </div>
                         <div class="form-group">
                             <input type="submit" name="submit" id="submit" class="form-submit" value="Créer son Compte"/>
