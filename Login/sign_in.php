@@ -1,5 +1,16 @@
 <?php 
 
+try{
+		$bdd =new PDO('mysql:host=localhost;dbname=Blog; charset=utf8', 'matcheme', 'Divinement#1983');
+		// Activation des erreurs PDO
+		 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		// mode de fetch par défaut : FETCH_ASSOC / FETCH_OBJ / FETCH_BOTH
+		 $bdd->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+	} 
+	catch(PDOException $e) {
+		die('Erreur : ' . $e->getMessage());
+	}
+
 	//Création de la variable de connexion
 	$formConnexion = $_POST["formConnexion"];
 	if (isset($formConnexion)) {
@@ -8,7 +19,19 @@
 		$pass = sha1($_POST["pass"]);
 		$passPost = $_POST["pass"];
 		if (!empty($username) AND !empty($passPost)) {
-			echo "ok";
+
+			// On Verifit si l'utilisateur et mot de passe sont correctes.
+			$requser = $bdd->prepare("SELECT * FROM membres WHERE nom =? AND motdepasse =?");
+			$requser->execute(array($username,$pass));
+			$userexiste = $requser->RowCount();
+			if ($userexiste == 1) {
+				echo "ok";
+			}
+			else
+			{
+				$erreur = "Nom d'utilisateur ou mot de passe incorrecte!";
+			}
+
 		}
 		else
 		{
