@@ -2,5 +2,5 @@
 session_start();
 $_SESSION = array();
 session_destroy();
-header("Location:http://localhost/Blog/Blog_php/index.php");
+header("Location: http://localhost/Blog/Blog_php/index.php");
  ?>

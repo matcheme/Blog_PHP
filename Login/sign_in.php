@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 try{
 		$bdd =new PDO('mysql:host=localhost;dbname=Blog; charset=utf8', 'matcheme', 'Divinement#1983');
 		// Activation des erreurs PDO
@@ -25,7 +25,13 @@ try{
 			$requser->execute(array($username,$pass));
 			$userexiste = $requser->RowCount();
 			if ($userexiste == 1) {
-				echo "ok";
+				$userinfo = $requser->fetch();
+				$_SESSION["id"] = $userinfo["id"];
+				$_SESSION["nom"] = $userinfo["nom"];
+				$_SESSION["mail"] = $userinfo["mail"];
+				$_SESSION["motdepasse"] = $userinfo["motdepasse"];
+				header("Location: http://localhost/Blog/Blog_php/profil.php?nom=".$_SESSION["nom"]);
+
 			}
 			else
 			{
