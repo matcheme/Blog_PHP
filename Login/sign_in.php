@@ -1,3 +1,24 @@
+<?php 
+
+	//Création de la variable de connexion
+	$formConnexion = $_POST["formConnexion"];
+	if (isset($formConnexion)) {
+		//Création des variables des champs de connexion
+		$username = htmlspecialchars($_POST["username"]);
+		$pass = sha1($_POST["pass"]);
+		$passPost = $_POST["pass"];
+		if (!empty($username) AND !empty($passPost)) {
+			echo "ok";
+		}
+		else
+		{
+			$erreur = " Tous les champs du formulaire doivent être remplis!";
+		}
+	}
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,11 +51,15 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form p-l-55 p-r-55 p-t-178">
+				<form method="POST" class="login100-form validate-form p-l-55 p-r-55 p-t-178" action="#">
 					<span class="login100-form-title">
 						Se Connecter
 					</span>
-
+					<div style="color: red" align="center">
+						<?php if (isset($erreur)) {
+							echo $erreur;
+						} ?>
+					</div>
 					<div class="wrap-input100 validate-input m-b-16" data-validate="Entrer votre Nom Utilisateur">
 						<input class="input100" type="text" name="username" placeholder="Votre Nom d'Utilisateur">
 						<span class="focus-input100"></span>
@@ -55,9 +80,8 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							<h5 style="color: white"> <strong>Se Connecter </strong></h5>
-						</button>
+						<input type="submit" name="formConnexion" value="Se Connecter" class="login100-form-btn">
+						
 					</div>
 
 					<div class="flex-col-c p-t-170 p-b-40">
