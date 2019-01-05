@@ -12,8 +12,9 @@ try{
 	}
 
 	//Création de la variable de connexion
-	$formConnexion = $_POST["formConnexion"];
-	if (isset($formConnexion)) {
+	$formConnexion = isset($_POST["formConnexion"]);
+	if ($formConnexion) {
+
 		//Création des variables des champs de connexion
 		$username = htmlspecialchars($_POST["username"]);
 		$pass = sha1($_POST["pass"]);
@@ -110,7 +111,6 @@ try{
 
 					<div class="container-login100-form-btn">
 						<input type="submit" name="formConnexion" value="Se Connecter" class="login100-form-btn">
-						
 					</div>
 
 					<div class="flex-col-c p-t-170 p-b-40">
