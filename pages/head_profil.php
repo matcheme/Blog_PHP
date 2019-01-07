@@ -1,7 +1,7 @@
 <?php 
 session_start();
+    if ($_SESSION["nom"]==$_GET["nom"])  {
  ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,7 +72,7 @@ session_start();
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href=" http://localhost/Blog/Blog_php/profil.php?nom='.$_SESSION['nom'] " >Développement personnel</a>
+                <a class="navbar-brand" href="#" >Développement personnel</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -90,14 +90,35 @@ session_start();
                     <li class="page-scroll">
                         <a href="#contact">Contact</a>
                     </li>
-                    
-                    <li>
-                        <a href="deconnexion.php"> Déconnexion </a>     
+
+                    <!-- /.dropdown -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user navbar-default navbar-custom">
+                            <li><a href="#"><i class="fa fa-user fa-fw"></i> Votre Profil</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Modifier Profil</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="deconnexion.php"><i class="fa fa-sign-out fa-fw"></i> Déconnexion </a>
+                            </li>
+                        </ul>
+                        <!-- /.dropdown-user -->
+
                     </li>
- 
+                    <!-- /.dropdown -->
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
+<?php  } 
+else
+{
+    header("Location: http://localhost/Blog/Blog_php/index.php");
+}
+?>

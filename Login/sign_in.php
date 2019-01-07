@@ -31,7 +31,7 @@ try{
 				$_SESSION["nom"] = $userinfo["nom"];
 				$_SESSION["mail"] = $userinfo["mail"];
 				$_SESSION["motdepasse"] = $userinfo["motdepasse"];
-				header("Location: http://localhost/Blog/Blog_php/profil.php?nom=".$_SESSION["nom"]);
+				header("Location: http://localhost/Blog/Blog_php/profil.php?nom=".urlencode($_SESSION["nom"]));
 
 			}
 			else
