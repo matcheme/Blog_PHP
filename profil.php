@@ -1,6 +1,5 @@
 
 <?php
-session_start();
 include("pages/head_profil.php");
 include("pages/header.php");
 

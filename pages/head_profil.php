@@ -27,7 +27,8 @@ session_start();
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
+  <!--  <link href="css/freelancer.min.css" rel="stylesheet">  -->
+        <link href="css/freelancer.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -72,12 +73,12 @@ session_start();
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#" >Développement personnel</a>
+                <a class="navbar-brand" href="http://localhost/Blog/Blog_php/profil.php?nom=<?php echo $_SESSION['nom']; ?>" >Dév Personnel</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+            <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right ">
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
@@ -99,7 +100,7 @@ session_start();
                         <ul class="dropdown-menu dropdown-user navbar-default navbar-custom">
                             <li><a href="#"><i class="fa fa-user fa-fw"></i> Votre Profil</a>
                             </li>
-                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Modifier Profil</a>
+                            <li><a href="http://localhost/Blog/Blog_php/edition_profil.php?nom=<?php echo $_SESSION['nom']; ?>"><i class="fa fa-gear fa-fw"></i> Modifier Profil</a>
                             </li>
                             <li class="divider"></li>
                             <li><a href="deconnexion.php"><i class="fa fa-sign-out fa-fw"></i> Déconnexion </a>
