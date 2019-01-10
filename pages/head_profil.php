@@ -1,5 +1,6 @@
 <?php 
 session_start();
+ob_start();//pour la redirection de la fonction header().
     if ($_SESSION["nom"]==$_GET["nom"])  {
  ?>
 <!DOCTYPE html>
