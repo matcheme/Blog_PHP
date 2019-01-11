@@ -99,7 +99,7 @@ ob_start();//pour la redirection de la fonction header().
                             <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-user navbar-default navbar-custom">
-                            <li><a href="#"><i class="fa fa-user fa-fw"></i> Votre Profil</a>
+                            <li><a href="http://localhost/Blog/Blog_php/page_profil.php?nom=<?php echo $_SESSION['nom']; ?>"><i class="fa fa-user fa-fw"></i> Votre Profil</a>
                             </li>
                             <li><a href="http://localhost/Blog/Blog_php/edition_profil.php?nom=<?php echo $_SESSION['nom']; ?>"><i class="fa fa-gear fa-fw"></i> Modifier Profil</a>
                             </li>

@@ -64,6 +64,7 @@ if ($Modifier) {
 										$_SESSION["nom"] = $userinfo["nom"];
 										$_SESSION["mail"] = $userinfo["mail"];
 										$_SESSION["motdepasse"] = $userinfo["motdepasse"];
+                                        
 										header("Location: http://localhost/Blog/Blog_php/profil.php?nom=".urlencode($_SESSION["nom"]));
 										ob_end_flush();
 								
@@ -120,18 +121,14 @@ if ($Modifier) {
 	<div align="center" style="margin-top:11%">
 		
 		<ul class="breadcrumb" align="left">
-			<li>
-                <a href="#">Qui sommes nous?</a>
+            <li>
+                 <a href="http://localhost/Blog/Blog_php/edition_profil.php?nom=<?php echo $_SESSION['nom']; ?>"> <?php echo $_SESSION["nom"]; ?> </a> 
             </li>
             <li>
-                <a href="#">Blogs</a>
+                Modifier
             </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-            <li>Modifier Profil</li>
-            
-		</ul><br>
+         
+        </ul><br>
 <!-- fin d'ajout de fil d'arianne -->
 
 		<h2> Profil de <?php echo $_SESSION["nom"]; ?> </h2>
